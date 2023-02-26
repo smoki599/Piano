@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "__threading_support": "c",
+        "atomic": "c",
+        "mutex": "c",
+        "sweepermain.h": "c"
+    }
+}
