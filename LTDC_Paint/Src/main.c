@@ -95,6 +95,9 @@ int main(void)
   /* Touchscreen initialization */
   BSP_TS_Init(0, hTS);
 
+  srand(time(NULL));   // Initialization, should only be called once.
+  HAL_IncTick();
+
   /* Infinite loop */
   while (1)
   {

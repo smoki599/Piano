@@ -61,8 +61,8 @@ all: main-build
 main-build: ExtMem_Boot.elf secondary-outputs
 
 # Tool invocations
-ExtMem_Boot.elf ExtMem_Boot.map: $(OBJS) $(USER_OBJS) /Users/aljazjustin/soal-programi/2.\ Letnik/OR/Game/ExtMem_Boot/STM32H750XBHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "ExtMem_Boot.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/Users/aljazjustin/soal-programi/2. Letnik/OR/Game/ExtMem_Boot/STM32H750XBHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ExtMem_Boot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+ExtMem_Boot.elf ExtMem_Boot.map: $(OBJS) $(USER_OBJS) D:\FRI_zapiski\OR\STM32CubeH7-master\STM32CubeH7-master\Projects\STM32H750B-DK\Templates\ExtMem_Boot\STM32CubeIDE\STM32H750XBHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "ExtMem_Boot.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\FRI_zapiski\OR\STM32CubeH7-master\STM32CubeH7-master\Projects\STM32H750B-DK\Templates\ExtMem_Boot\STM32CubeIDE\STM32H750XBHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ExtMem_Boot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
