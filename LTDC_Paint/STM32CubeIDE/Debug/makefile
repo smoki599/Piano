@@ -69,8 +69,8 @@ all: main-build
 main-build: LTDC_Paint.elf secondary-outputs
 
 # Tool invocations
-LTDC_Paint.elf LTDC_Paint.map: $(OBJS) $(USER_OBJS) /Users/aljazjustin/soal-programi/2.\ Letnik/OR/Game/LTDC_Paint/STM32CubeIDE/STM32H750XBHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "LTDC_Paint.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/Users/aljazjustin/soal-programi/2. Letnik/OR/Game/LTDC_Paint/STM32CubeIDE/STM32H750XBHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LTDC_Paint.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+LTDC_Paint.elf LTDC_Paint.map: $(OBJS) $(USER_OBJS) /Users/aljazjustin/soal-programi/2.\ Letnik/OR/Stm32H750B-DK_Minesweeper/LTDC_Paint/STM32CubeIDE/STM32H750XBHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "LTDC_Paint.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/Users/aljazjustin/soal-programi/2. Letnik/OR/Stm32H750B-DK_Minesweeper/LTDC_Paint/STM32CubeIDE/STM32H750XBHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LTDC_Paint.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

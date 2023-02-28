@@ -12,6 +12,7 @@ static void Draw_flag(int8_t x, int8_t y);
 static void Remove_flag(int8_t x, int8_t y);
 static void Mine_Selection_Position();
 static void Reset_Game();
+static void Victory_Screen();
 // mape array
 int8_t tab[23][11];
 /**
@@ -38,18 +39,22 @@ uint32_t x_size, y_size;
 
 // nimber of mines left
 uint16_t Mine_Num = 50;
+int Counter_Mine = 50;
 
 uint16_t Tmp_Mine_Num = 0;
 
 // game state if =0 end game
 int8_t Game_State = 1;
-
-long Time_playinf = 0;
 /**
  * 0 -> game end
  * 1 -> game is playing
  * 2 -> selecting bomb amount
+ * 4 -> victory
  */
+
+long Time_playinf = 0;
+
+uint16_t Tiles_open = 253;
 
 static TS_State_t TS_State;
 
@@ -57,6 +62,10 @@ void sweeperMain()
 {
   Game_State = 1;
   flag = 0;
+  Tiles_open = 253;
+  Tiles_open = Tiles_open - Mine_Num + 1;
+  Counter_Mine = Mine_Num;
+
   BSP_LCD_GetXSize(0, &x_size);
   BSP_LCD_GetYSize(0, &y_size);
   /*##-6- Draw the menu ######################################################*/
@@ -89,11 +98,17 @@ void sweeperMain()
 
   while (1)
   {
-    if (Game_State == 2)
+
+    if (Game_State == 4)
+    {
+      Victory_Screen();
+    }
+    else if (Game_State == 2)
       Mine_Selection_Position();
     else if (Game_State == 1)
     {
-
+      if (Tiles_open < 1)
+        Game_State = 4;
       if ((HAL_GetTick() - Time_playinf) > 1000)
       {
         int sekind = (HAL_GetTick() - Time_playinf) / 1000;
@@ -103,8 +118,8 @@ void sweeperMain()
         char st[3];
         sprintf(st, "%3d", sekind);
         UTIL_LCD_DisplayStringAt(420, 15, (uint8_t *)st, LEFT_MODE);
-        GetPosition();
       }
+      GetPosition();
     }
     else if (Game_State == 0)
     {
@@ -113,7 +128,6 @@ void sweeperMain()
       y = TS_State.TouchY;
       if ((x > 220) && (x < 255) && (y > 7) && (y < 33))
       {
-
         Reset_Game();
       }
     }
@@ -303,7 +317,11 @@ static void Bomb_Hit()
  */
 static void Draw_Cvad(int8_t x_move, int8_t y_move)
 {
+  if (tab[x_move][y_move] < 9 && tab[x_move][y_move] > -1)
+  {
 
+    Tiles_open--;
+  }
   UTIL_LCD_DrawRect(28 + (x_move * 20), 43 + (y_move * 20), 2, 18, UTIL_LCD_COLOR_ST_GRAY_LIGHT);
   UTIL_LCD_DrawRect(10 + (x_move * 20), 61 + (y_move * 20), 20, 2, UTIL_LCD_COLOR_ST_GRAY_LIGHT);
   UTIL_LCD_DrawRect(10 + (x_move * 20), 43 + (y_move * 20), 20, 2, UTIL_LCD_COLOR_ST_GRAY_LIGHT);
@@ -445,6 +463,7 @@ static void GetPosition()
  */
 static void Open_empty(int8_t x, int8_t y)
 {
+
   Draw_Cvad(x, y);
   tab[x][y] += 10;
   if (y > 0)
@@ -568,6 +587,15 @@ static void Draw_flag(int8_t x, int8_t y)
   UTIL_LCD_DrawRect(16 + (x * 20), 56 + (y * 20), 8, 2, UTIL_LCD_COLOR_BLACK);
   UTIL_LCD_DrawRect(14 + (x * 20), 58 + (y * 20), 12, 2, UTIL_LCD_COLOR_BLACK);
   UTIL_LCD_FillRect(16 + (x * 20), 47 + (y * 20), 4, 5, UTIL_LCD_COLOR_RED);
+
+  Counter_Mine--;
+  UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_RED);
+  UTIL_LCD_SetBackColor(UTIL_LCD_COLOR_BLACK);
+  UTIL_LCD_SetFont(&Font16);
+  UTIL_LCD_FillRect(12, 9, 50, 25, UTIL_LCD_COLOR_BLACK);
+  char st[3];
+  sprintf(st, "%3d", Counter_Mine);
+  UTIL_LCD_DisplayStringAt(20, 15, (uint8_t *)st, LEFT_MODE);
 }
 /**
  * @brief  removes flag on mark
@@ -582,6 +610,15 @@ static void Remove_flag(int8_t x, int8_t y)
   UTIL_LCD_DrawRect(10 + (x * 20), 61 + (y * 20), 20, 2, UTIL_LCD_COLOR_ST_GRAY_DARK);
   UTIL_LCD_DrawRect(10 + (x * 20), 43 + (y * 20), 20, 2, UTIL_LCD_COLOR_WHITE);
   UTIL_LCD_DrawRect(10 + (x * 20), 43 + (y * 20), 2, 20, UTIL_LCD_COLOR_WHITE);
+
+  Counter_Mine++;
+  UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_RED);
+  UTIL_LCD_SetBackColor(UTIL_LCD_COLOR_BLACK);
+  UTIL_LCD_SetFont(&Font16);
+  UTIL_LCD_FillRect(12, 9, 50, 25, UTIL_LCD_COLOR_BLACK);
+  char st[3];
+  sprintf(st, "%3d", Counter_Mine);
+  UTIL_LCD_DisplayStringAt(20, 15, (uint8_t *)st, LEFT_MODE);
 }
 
 /**
@@ -685,6 +722,8 @@ static void Mine_Selection_Position()
     {
       if (Tmp_Mine_Num > 252)
         Tmp_Mine_Num = 252;
+      else if (Tmp_Mine_Num < 1)
+        Tmp_Mine_Num = 1;
       Mine_Num = Tmp_Mine_Num;
       Reset_Game();
     }
@@ -705,4 +744,30 @@ static void Mine_Selection_Position()
 static void Reset_Game()
 {
   Game_State = -1;
+}
+
+static void Victory_Screen()
+{
+  UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_RED);
+  UTIL_LCD_SetBackColor(UTIL_LCD_COLOR_ST_GRAY_LIGHT);
+  UTIL_LCD_SetFont(&Font24);
+  UTIL_LCD_DisplayStringAt(180, 50, (uint8_t *)"Victory", LEFT_MODE);
+
+  BSP_TS_GetState(0, &TS_State);
+
+  /* Read the coordinate */
+
+  x = TS_State.TouchX;
+  y = TS_State.TouchY;
+
+  if ((x > 220) && (x < 255) && (y > 7) && (y < 33))
+  {
+    //
+    Reset_Game();
+  }
+  // number set
+  if ((x > 12) && (x < 62) && (y > 9) && (y < 34))
+  {
+    Set_Bomb_Number();
+  }
 }

@@ -18,8 +18,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "save.h"
-#include "color.h"
 #include "MineSweeper/sweeperMain.h"
 
 /** @addtogroup STM32H7xx_HAL_Applications
