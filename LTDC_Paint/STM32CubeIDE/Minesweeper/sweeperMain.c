@@ -46,7 +46,7 @@ uint16_t Tmp_Mine_Num = 0;
 // game state if =0 end game
 int8_t Game_State = 1;
 /**
- * 0 -> game end
+ * -1 -> game end
  * 1 -> game is playing
  * 2 -> selecting bomb amount
  * 4 -> victory

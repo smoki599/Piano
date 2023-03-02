@@ -44,3 +44,6 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/aljaz
 
 !ENTRY org.eclipse.cdt.core 1 0 2023-03-02 17:04:27.721
 !MESSAGE Indexed 'LTDC_Paint' (59 sources, 144 headers) in 7,74 sec: 16.887 declarations; 127.503 references; 0 unresolved inclusions; 1 syntax errors; 4 unresolved names (0,0028%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-03-02 17:09:24.094
+!MESSAGE Indexed 'LTDC_Paint' (57 sources, 143 headers) in 3,86 sec: 16.821 declarations; 127.408 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0,0014%)
