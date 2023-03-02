@@ -6,7 +6,7 @@ The goal of my project was to make a game for STM32H750B-DK using the LCD and to
 
 ## How to load the program
 ### 1. ExtMen_Boot
-The first thing to do, is get ExtMem_Boot project form [GitHub Pages](https://github.com/STMicroelectronics/STM32CubeH7/tree/master/Projects/STM32H750B-DK/Templates). This is necessary to load the game in the board, it will let you load programs to memory and run from it. 
+The first thing to do, is get ExtMem_Boot project form [GitHub Pages](https://github.com/STMicroelectronics/STM32CubeH7/tree/master/Projects/STM32H750B-DK/Templates). This is necessary to load the game in the board, it will let you load programs to external memory and run from it. 
 
 1. Load the program into your project manager
 2. Build and load it on the board as per usual
