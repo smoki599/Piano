@@ -1,12 +1,20 @@
-# How to install 
-## 1. ExtMen_Boot
-As a normal STM32 project load the program on your STM32H750B-DK board.
+# STM32H750B-DK Minesweepwe
 
-## 2. LTDC_Paint
-- When mporting the project I suggest to select the STM32CubeIDE folder in LTDC_Paint folder when selecting "Open file from file system".
-- Build the project as normal. If error try cleaning it and build again
-- When you run the project thw window will appear go tunder debug tab and select external load
-- Press scan and select the one cintaining "STM32H750-DISCO"
-- Press applay and cintinue
-- After the program loads successfully u may have to press the reset button on the board, you might have to do that a couple of times in my cae it usualy works in one press, but sometimes i had to pres 2-3 times
+## Project summary
+This is a project for subject "Organizacija računalnikov". 
+The goal of my project was to make a game for STM32H750B-DK using the LCD and touch screen in C/C++. I crated Minesweepwe, I tried to make it as simmular to the origila, all of the assets are made with the included library with no use of any bitmaps or images.
 
+## How to install 
+### 1. ExtMen_Boot
+First thing to do, get ExtMem_Boot project form [GitHub Pages](https://github.com/STMicroelectronics/STM32CubeH7/tree/master/Projects/STM32H750B-DK/Templates). This is necessary to load the game in the board, it will let you load programs to Cache and run the program from it. 
+
+1. Load the program in your project manager
+2. Build and load it on the board as per usual
+
+
+### 2. LTDC_Paint
+
+I created the game from an example LTDC_Paint hence why the name. The code is changed dramaticly in my game but it uses the same libraries. 
+
+1. Load the program in your project manager
+2. Build the project 

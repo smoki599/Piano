@@ -58,6 +58,11 @@ uint16_t Tiles_open = 253;
 
 static TS_State_t TS_State;
 
+/**
+ * @brief  Main function sets up and runs gaim
+ * @param  None
+ * @retval None
+ */
 void sweeperMain()
 {
   Game_State = 1;
@@ -312,7 +317,8 @@ static void Bomb_Hit()
 
 /**
  * @brief  Draw the unknown squear
- * @param  None
+ * @param  x_move  x position in game table
+ * @param y_move  y position in game table
  * @retval None
  */
 static void Draw_Cvad(int8_t x_move, int8_t y_move)
@@ -458,7 +464,8 @@ static void GetPosition()
 
 /**
  * @brief  Opens empty squears
- * @param  None
+ * @param  x  x position in game table
+ * @param y  y position in game table
  * @retval None
  */
 static void Open_empty(int8_t x, int8_t y)
@@ -578,7 +585,8 @@ static void Set_Bomb_Number()
 
 /**
  * @brief  draw fkag on mark
- * @param  None
+ * @param  x  x position in game table
+ * @param y  y position in game table
  * @retval None
  */
 static void Draw_flag(int8_t x, int8_t y)
@@ -597,9 +605,11 @@ static void Draw_flag(int8_t x, int8_t y)
   sprintf(st, "%3d", Counter_Mine);
   UTIL_LCD_DisplayStringAt(20, 15, (uint8_t *)st, LEFT_MODE);
 }
+
 /**
  * @brief  removes flag on mark
- * @param  None
+ * @param  x  x position in game table
+ * @param y  y position in game table
  * @retval None
  */
 static void Remove_flag(int8_t x, int8_t y)
@@ -746,6 +756,11 @@ static void Reset_Game()
   Game_State = -1;
 }
 
+/**
+ * @brief  After wining screan
+ * @param  None
+ * @retval None
+ */
 static void Victory_Screen()
 {
   UTIL_LCD_SetTextColor(UTIL_LCD_COLOR_RED);

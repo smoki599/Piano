@@ -1,0 +1,46 @@
+!SESSION 2023-03-02 16:21:59.889 -----------------------------------------------
+eclipse.buildId=Version 1.11.2
+java.version=11.0.16
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_SI
+Framework arguments:  -keyring /Users/aljazjustin/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/aljazjustin/.eclipse_keyring
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-03-02 16:22:27.105
+!MESSAGE Log4j initialized with config file /Users/aljazjustin/soal-programi/2. Letnik/OR/Stm32H750B-DK_Minesweeper/.metadata/.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-03-02 16:22:33.531
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-03-02 16:22:36.272
+!MESSAGE ProjectImporter: already registered
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-03-02 16:23:23.966
+!MESSAGE Indexed 'LTDC_Paint' (59 sources, 144 headers) in 22,7 sec: 16.887 declarations; 127.503 references; 0 unresolved inclusions; 1 syntax errors; 4 unresolved names (0,0028%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-03-02 16:24:09.894
+!MESSAGE Indexed 'ExtMem_Boot' (2 sources, 53 headers) in 1,16 sec: 1.947 declarations; 2.830 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0,042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-03-02 16:33:12.176
+!MESSAGE Indexed 'ExtMem_Boot' (9 sources, 59 headers) in 1,19 sec: 2.731 declarations; 3.576 references; 9 unresolved inclusions; 4 syntax errors; 574 unresolved names (8,3%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-03-02 16:39:23.330
+!MESSAGE Indexed 'ExtMem_Boot' (2 sources, 53 headers) in 0,833 sec: 1.947 declarations; 2.830 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0,042%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2023-03-02 16:40:30.406
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-03-02 16:42:58.149
+!MESSAGE Indexed 'ExtMem_Boot' (2 sources, 53 headers) in 0,527 sec: 1.947 declarations; 2.830 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0,042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-03-02 16:43:34.701
+!MESSAGE Indexed 'ExtMem_Boot' (2 sources, 53 headers) in 0,432 sec: 1.947 declarations; 2.830 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0,042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-03-02 17:02:50.222
+!MESSAGE Indexed 'LTDC_Paint' (4 sources, 53 headers) in 0,941 sec: 2.012 declarations; 2.925 references; 0 unresolved inclusions; 1 syntax errors; 4 unresolved names (0,081%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-03-02 17:03:21.893
+!MESSAGE Indexed 'ExtMem_Boot' (2 sources, 53 headers) in 0,588 sec: 1.947 declarations; 2.830 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0,042%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-03-02 17:04:27.721
+!MESSAGE Indexed 'LTDC_Paint' (59 sources, 144 headers) in 7,74 sec: 16.887 declarations; 127.503 references; 0 unresolved inclusions; 1 syntax errors; 4 unresolved names (0,0028%)

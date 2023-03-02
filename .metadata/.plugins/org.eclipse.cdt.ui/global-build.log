@@ -1,0 +1,32 @@
+17:03:47 **** Build of configuration Debug for project ExtMem_Boot ****
+make -j7 all 
+make: *** No rule to make target '/Users/aljazjustin/Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c', needed by 'Drivers/STM32H7xx_HAL_Driver/stm32h7xx_hal.o'.  Stop.
+"make -j7 all" terminated with exit code 2. Build might be incomplete.
+17:04:21 **** Build of configuration Debug for project LTDC_Paint ****
+make -j7 all 
+arm-none-eabi-size   LTDC_Paint.elf 
+   text	   data	    bss	    dec	    hex	filename
+  68568	    204	  25624	  94396	  170bc	LTDC_Paint.elf
+Finished building: default.size.stdout
+ 
+17:06:04 **** Incremental Build of configuration Debug for project LTDC_Paint ****
+make -j7 all 
+arm-none-eabi-size   LTDC_Paint.elf 
+   text	   data	    bss	    dec	    hex	filename
+  68568	    204	  25624	  94396	  170bc	LTDC_Paint.elf
+Finished building: default.size.stdout
+ 
+17:06:28 **** Incremental Build of configuration Debug for project LTDC_Paint ****
+make -j7 all 
+arm-none-eabi-size   LTDC_Paint.elf 
+   text	   data	    bss	    dec	    hex	filename
+  68568	    204	  25624	  94396	  170bc	LTDC_Paint.elf
+Finished building: default.size.stdout
+ 
+17:06:41 **** Incremental Build of configuration Debug for project LTDC_Paint ****
+make -j7 all 
+arm-none-eabi-size   LTDC_Paint.elf 
+   text	   data	    bss	    dec	    hex	filename
+  68568	    204	  25624	  94396	  170bc	LTDC_Paint.elf
+Finished building: default.size.stdout
+ 

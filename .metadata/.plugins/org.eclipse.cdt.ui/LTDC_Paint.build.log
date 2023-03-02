@@ -1,0 +1,10 @@
+17:06:41 **** Incremental Build of configuration Debug for project LTDC_Paint ****
+make -j7 all 
+arm-none-eabi-size   LTDC_Paint.elf 
+   text	   data	    bss	    dec	    hex	filename
+  68568	    204	  25624	  94396	  170bc	LTDC_Paint.elf
+Finished building: default.size.stdout
+ 
+
+17:06:42 Build Finished. 0 errors, 0 warnings. (took 273ms)
+
