@@ -1,4 +1,4 @@
-18:11:54 **** Clean-only build of configuration Debug for project LTDC_Paint ****
+19:48:54 **** Clean-only build of configuration Debug for project LTDC_Paint ****
 make -j7 clean 
 rm -rf ./Utilities/lcd_trace.d ./Utilities/lcd_trace.o ./Utilities/lcd_trace.su ./Utilities/stm32_lcd.d ./Utilities/stm32_lcd.o ./Utilities/stm32_lcd.su
 rm -rf ./Minesweeper/sweeperMain.d ./Minesweeper/sweeperMain.o ./Minesweeper/sweeperMain.su
@@ -15,5 +15,5 @@ rm -rf ./Application/Startup/startup_stm32h750xbhx.d ./Application/Startup/start
 rm -rf LTDC_Paint.elf LTDC_Paint.list LTDC_Paint.map default.size.stdout
  
 
-18:11:54 Build Finished. 0 errors, 0 warnings. (took 366ms)
+19:48:55 Build Finished. 0 errors, 0 warnings. (took 379ms)
 
