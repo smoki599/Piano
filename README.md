@@ -1,8 +1,8 @@
 # STM32H750B-DK Minesweepwe
 
 ## Project summary
-This is a project for the subject "Organizacija računalnikov", lead by Profesor Robert Rozman at Faculty of Computer and Information Science in Ljubljana. 
-The goal of my project was to make a game for STM32H750B-DK using the LCD and touch screen in C/C++. I created Minesweepwe, I tried to make it similar to the original, all of the assets are made with the included library with no use of any bitmaps or images.
+This is a project for the subject "Organizacija računalnikov", lead by Profesor Robert Rozman at Faculty of Computer and Information Science in Ljubljana. The project thath helped me to initialize the display and tuch screen is [STM32H750B-DK_BSP_C_Basic](https://github.com/LAPSyLAB/ORLab-STM32H7).
+The goal of my project was to make a game for STM32H750B-DK using the LCD and touch screen in C/C++. I created Minesweepwe, I tried to make it similar to the original, all of the assets are made with the included library with no use of any bitmaps or images. 
 
 ## Loading the Program
 
