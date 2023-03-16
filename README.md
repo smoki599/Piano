@@ -1,25 +1,15 @@
 # STM32H750B-DK Minesweepwe
 
 ## Project summary
-This is a project for the subject "Organizacija računalnikov". 
+This is a project for the subject "Organizacija računalnikov", lead by Profesor Robert Rozman at Faculty of Computer and Information Science in Ljubljana. 
 The goal of my project was to make a game for STM32H750B-DK using the LCD and touch screen in C/C++. I created Minesweepwe, I tried to make it similar to the original, all of the assets are made with the included library with no use of any bitmaps or images.
 
-## How to load the program
-### 1. ExtMen_Boot
-The first thing to do, is get ExtMem_Boot project form [GitHub Pages](https://github.com/STMicroelectronics/STM32CubeH7/tree/master/Projects/STM32H750B-DK/Templates). This is necessary to load the game in the board, it will let you load programs to external memory and run from it. 
+## Loading the Program
 
-1. Load the program into your project manager
-2. Build and load it on the board as per usual
+To load this project onto your board, follow the standard procedure you would use for any other project. I used STMCubeIDE, but you can use any other software that works for you.
 
-
-### 2. LTDC_Paint
-
-I created the game from an example LTDC_Paint hence why the name. The code is changed dramatically in my game but it uses the same libraries. 
-
-1. Load the program into your project manager
-2. Build the project 
-
-You might need to select the external load when loading the project. When the Debug Configurations window opens you go under the Debugger tab and find External Loder. Pres Scan and the options should appear, select the one that has the name MT25TL01G_STM32H750B-DISCO.
+### Tips for Usage
+With this code, you can easily create your own project that uses the touch screen and LCD. The game code is located in the "Minesweeper" folder, so you can create your own folder with .c and .h files and write your own code, calling your start function in main as shown in this example. If you create your own folder, make sure to add the source location and includes under Project > Properties > Paths and Symbols > Tab to tell the project where to look for your files. Alternatively, you can write all your code in main.c, and it will work just as well. I hope this information helps you create a project for STM32H750B-DK.
 
 ## About the project
 
